@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+:root {
+  --white-cleber: whitesmoke;
+  --gray-cleber: rgb(197, 179, 179);
+  --red-cleber: #FF0000;
+  --light-red-cleber: #eeb8b8;
+  --black-cleber: #1C1C1C;
+  --light-black-cleber: #363434;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* || GENERAL */
+
+.calculator-view {
+  background-color: #E5E5E5;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.calculator-container {
+  background-color: var(--black-cleber);
+  width: 500px;
+  position: relative;
+  padding: 2.5rem;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calculator {
+  height: 20%;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 1rem;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+#result, #curr {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  font-family: 'Roboto Condensed';
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#result {
+  margin-top: -3rem;
+  color: var(--light-red-cleber);
+  font-size: 40px;
+}
+
+#curr {
+  margin-top: 1rem;
+  color: var(--white-cleber);
+  font-size: 1.5rem;
+}
+
+/* || BUTTONS */
+
+.calc-buttons-container {
+  background-color: var(--black-cleber);
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn-section {
+  width: 480px;
+  height: 75px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn-section + .btn-section {
+  margin-top: 10px;
+}
+
+.num-btn, .operator-btn, .equal-btn, .clear-btn, .delete-btn {
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+  font-size: 2rem;
+  font-family: 'Roboto Condensed';
+}
+
+.operator-btn {
+  width: 20%;
+  transition: 0.4s;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  background-color: var(--red-cleber);
+}
+
+.equal-btn {
+  width: 45%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.clear-btn {
+  width: 33%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.delete-btn {
+  width: 33%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.operator-btn:hover {
+  box-shadow: none;
+  transition: all 0.4s;
+  background-color: var(--light-red-cleber);
+}
+
+.equal-btn:hover, .clear-btn:hover, .delete-btn:hover {
+  background-color: var(--red-cleber);
+  color: var(--white-cleber);
+  box-shadow: none;
+  transition: 0.4s;
+}
+
+.num-btn {
+  width: 20%;
+  background-color: var(--light-black-cleber);
+  color: var(--white-cleber);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.4s;
+}
+
+.num-btn:hover {
+  background-color: var(--gray-cleber);
+  color: var(--light-black-cleber);
+  box-shadow: none;
+  transition: all 0.4s;
 }
